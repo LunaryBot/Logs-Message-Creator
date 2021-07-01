@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JVOPINHO/Logs-Message-Visualizer.git"
+    "url": "git+https://github.com/LunaryBot/Logs-Message-Creator.git"
   },
   "author": "JVOPINHO",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JVOPINHO/Logs-Message-Visualizer/issues"
+    "url": "https://github.com/LunaryBot/Logs-Message-Creator/issues"
   },
-  "homepage": "https://github.com/JVOPINHO/Logs-Message-Visualizer#readme"
+  "homepage": "https://github.com/LunaryBot/Logs-Message-Creator#readme"
 }
