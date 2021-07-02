@@ -395,7 +395,14 @@ a {
 
 .mention {
     color:#7289da;
-    background:rgba(114, 137, 218, .1);
+    /* background:rgba(114, 137, 218, .1); */
+    background:rgba(72, 80, 109, 0.473);
+    border-radius: 3px;
+    padding: 0 2px;
+    font-weight: 500;
+}
+
+.mention-role {
     border-radius: 3px;
     padding: 0 2px;
     font-weight: 500;
