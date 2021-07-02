@@ -7,38 +7,41 @@ userInfo {
 }
 
 @font-face {
-    font-family:Whitney;
-    src:url(https://discordapp.com/assets/6c6374bad0b0b6d204d8d6dc4a18d820.woff);
-    font-weight:300
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/6c6374bad0b0b6d204d8d6dc4a18d820.woff);
+    font-weight: 300;
 }
 
 @font-face {
-    font-family:Whitney;
-    src:url(https://discordapp.com/assets/e8acd7d9bf6207f99350ca9f9e23b168.woff);
-    font-weight:400
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/e8acd7d9bf6207f99350ca9f9e23b168.woff);
+    font-weight: 400;
 }
 
 @font-face {
-    font-family:Whitney;
-    src:url(https://discordapp.com/assets/3bdef1251a424500c1b3a78dea9b7e57.woff);
-    font-weight:500
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/3bdef1251a424500c1b3a78dea9b7e57.woff);
+    font-weight: 500;
 }
 
 @font-face {
-    font-family:Whitney;
-    src:url(https://discordapp.com/assets/be0060dafb7a0e31d2a1ca17c0708636.woff);
-    font-weight:600
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/be0060dafb7a0e31d2a1ca17c0708636.woff);
+    font-weight: 600;
 }
 
 @font-face {
-    font-family:Whitney;
-    src:url(https://discordapp.com/assets/8e12fb4f14d9c4592eb8ec9f22337b04.woff);
-    font-weight:700
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/8e12fb4f14d9c4592eb8ec9f22337b04.woff);
+    font-weight: 700;
 }
 
 body {
     font-family:Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size:17px
+    font-size:17px;
+    background-color:#36393e;
+    color: #dcddde;
+    display: block;
 }
 
 a {
@@ -157,7 +160,8 @@ img {
     display:flex;
     margin:0 10px;
     padding:15px 0;
-    border-top:1px solid
+    /* border-top:1px solid;
+    border-color:rgba(201, 201, 201, 0.1) */
 }
 
 .author-avatar-container {
@@ -368,11 +372,6 @@ img {
     top:-.2em
 }
 
-body {
-    background-color:#36393e;
-    color: #dcddde
-}
-
 a {
     color:#0096cf
 }
@@ -382,7 +381,7 @@ a {
 }
 
 .quote {
-    border-color:#4f545c
+    border-color:#4f545c;
 }
 
 .pre {
@@ -395,7 +394,11 @@ a {
 }
 
 .mention {
-    color:#7289da
+    color:#7289da;
+    background:rgba(114, 137, 218, .1);
+    border-radius: 3px;
+    padding: 0 2px;
+    font-weight: 500;
 }
 
 .info__guild-name {
@@ -408,10 +411,6 @@ a {
 
 .info__channel-topic {
     color:#fff
-}
-
-.message-group {
-    border-color:rgba(255,255,255,.1)
 }
 
 .author-name {
