@@ -45,11 +45,12 @@ body {
 }
 
 a {
-    text-decoration:none
+    text-decoration :none;
+    color: #0096cf;
 }
 
 a:hover {
-    text-decoration:underline
+    text-decoration: underline;
 }
 
 img {
@@ -73,27 +74,29 @@ img {
     padding-left:10px
 }
 
-.pre {
+.code {
+    background-color: #2f3136!important;
+    padding:2px;
+    border-radius:3px;
+    font-size:85%;
     font-family:Consolas,"Courier New",Courier,monospace
 }
 
-.pre--multiline {
+.codeblock {
+    border-color: #282b30!important;
+    color: #839496!important;
+    background-color: #2f3136!important;
     margin-top:4px;
     padding:8px;
     border:2px solid;
-    border-radius:5px
-}
-
-.pre--inline {
-    padding:2px;
-    border-radius:3px;
-    font-size:85%
+    border-radius:5px;
+    font-family:Consolas,"Courier New",Courier,monospace
 }
 
 .mention {
     font-weight:500
 }
-
+ 
 .emoji {
     width:1.45em;
     height:1.45em;
@@ -101,14 +104,14 @@ img {
     vertical-align:-.4em
 }
 
-.emoji--small {
+.emoji-small {
     width:1rem;
     height:1rem
 }
 
-.emoji--large {
-    width:2rem;
-    height:2rem
+.emoji-large {
+    width: 3.2rem;
+    height: 3.2rem
 }
 
 .info {
@@ -187,17 +190,18 @@ img {
     font-weight:500
 }
 
-.timestamp {
-    margin-left:5px;
-    font-size:.75em
-}
-
 .message {
     padding:2px 5px;
     margin-right:-5px;
     margin-left:-5px;
     background-color:transparent;
     transition:background-color 1s ease
+}
+
+.message-image {
+    max-width:400px;
+    max-height:250px;
+    border-radius:3px
 }
 
 .content {
@@ -217,13 +221,15 @@ img {
     border-radius:3px
 }
 
+/* Embed*/
+
 .embed {
     margin-top:5px;
     display:flex;
     max-width:520px
 }
 
-.embed-color-pill {
+.embed-color {
     flex-shrink:0;
     width:4px;
     border-top-left-radius:3px;
@@ -240,12 +246,12 @@ img {
 }
 
 .embed-content {
-    width:100%;
-    display:flex
+    width: 100%;
+    display: flex
 }
 
 .embed-text {
-    flex:1
+    flex: 1;
 }
 
 .embed-author {
@@ -254,11 +260,11 @@ img {
     margin-bottom:5px
 }
 
-.embed-author-icon {
-    width:20px;
-    height:20px;
-    margin-right:9px;
-    border-radius:50%
+.embed-author-avatar {
+    width: 20px;
+    height: 20px;
+    margin-right: 9px;
+    border-radius: 50%
 }
 
 .embed-author-name {
@@ -266,10 +272,14 @@ img {
     font-weight:600
 }
 
+.embed-author a:hover {
+    text-decoration: underline #dcddde;
+}
+
 .embed-title {
-    margin-bottom:4px;
-    font-size:.875em;
-    font-weight:600
+    margin-bottom: 4px;
+    font-size: .875em;
+    font-weight: 600
 }
 
 .embed-description {
@@ -278,21 +288,20 @@ img {
 }
 
 .embed-fields {
-    display:flex;
-    flex-wrap:wrap
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .embed-field {
-    flex:0;
-    min-width:100%;
-    max-width:506px;
-    padding-top:10px
+    min-width: 30%;
+    width: 100%;
+    margin: 1.1%;
+    word-break: break-all;
 }
 
 .embed-field--inline {
-    flex:1;
-    flex-basis:auto;
-    min-width:150px
+    width: 30%;
+    flex-grow: 1;
 }
 
 .embed-field-name {
@@ -319,8 +328,8 @@ img {
 }
 
 .embed-image {
-    max-width:500px;
-    max-height:400px;
+    max-width:400px;
+    max-height:250px;
     border-radius:3px
 }
 
@@ -372,25 +381,12 @@ img {
     top:-.2em
 }
 
-a {
-    color:#0096cf
-}
-
 .spoiler {
     background-color:rgba(255,255,255,.1)
 }
 
 .quote {
     border-color:#4f545c;
-}
-
-.pre {
-    background-color:#2f3136!important
-}
-
-.pre--multiline {
-    border-color:#282b30!important;
-    color:#839496!important
 }
 
 .mention {
@@ -481,3 +477,35 @@ a {
     color:rgba(255,255,255,.3)
 }
 
+/* Message quote */
+
+.message-quote {
+    margin-left: 5px;
+    font-size: .75em;
+    color: dimgrey;
+}
+
+.message-quote-content {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.message-quote-author {
+    display: flex;
+    align-items: center;
+    /* margin-bottom: 5px; */
+}
+
+.message-quote-author-avatar {
+    width: 20px;
+    height: 20px;
+    margin-right: 9px;
+    margin-left: 7px;
+    border-radius: 50%;
+}
+
+.message-quote-author-name {
+    font-size:.875em;
+    font-weight:600;
+    /* color: dimgrey; */
+}
