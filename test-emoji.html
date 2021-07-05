@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Teste emojis</title>
+    <style>
+    </style>
+    <script src="emoji.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      this.onload = function () {
+        twemoji.parse(document.body, {
+          folder: 'svg',
+          ext: '.svg'
+        });
+      };
+    </script>
+  </head>
+  <body>
+      🏆️📝️📨️
+      💼💡❎
+  </body>
+</html>
