@@ -58,9 +58,9 @@ img {
 }
 
 .markdown {
-    white-space:pre-wrap;
-    line-height:1.3;
-    overflow-wrap:break-word
+    white-space: pre-wrap;
+    line-height: 1.3;
+    overflow-wrap: break-word;
 }
 
 .spoiler {
@@ -86,52 +86,48 @@ img {
     border-color: #282b30!important;
     color: #839496!important;
     background-color: #2f3136!important;
-    margin-top:4px;
-    padding:8px;
-    border:2px solid;
-    border-radius:5px;
+    margin-top: 4px;
+    padding: 8px;
+    border: 2px solid;
+    border-radius: 5px;
     font-family:Consolas,"Courier New",Courier,monospace
-}
-
-.mention {
-    font-weight:500
 }
  
 .emoji {
-    width:1.45em;
-    height:1.45em;
-    margin:0 1px;
-    vertical-align:-.4em
+    width: 1.45em;
+    height: 1.45em;
+    margin: 0 1px;
+    vertical-align: -.4em;
 }
 
 .emoji-small {
-    width:1rem;
-    height:1rem
+    width: 1rem;
+    height: 1rem;
 }
 
 .emoji-large {
     width: 3.2rem;
-    height: 3.2rem
+    height: 3.2rem;
 }
 
 .info {
-    display:flex;
-    max-width:100%;
-    margin:0 5px 10px
+    display: flex;
+    max-width: 100%;
+    margin: 0 5px 10px;
 }
 
 .info__guild-icon-container {
-    flex:0
+    flex: 0;
 }
 
 .info__guild-icon {
-    max-width:88px;
-    max-height:88px
+    max-width: 88px;
+    max-height: 88px;
 }
 
 .info__metadata {
-    flex:1;
-    margin-left:10px
+    flex: 1;
+    margin-left: 10px;
 }
 
 .info__guild-name {
@@ -272,6 +268,10 @@ img {
     font-weight:600
 }
 
+.embed-author-provider {
+    font-size: 13px;
+}
+
 .embed-author a:hover {
     text-decoration: underline #dcddde;
 }
@@ -386,7 +386,7 @@ img {
 }
 
 .quote {
-    border-color:#4f545c;
+    border-color: #4f545c;
 }
 
 .mention {
