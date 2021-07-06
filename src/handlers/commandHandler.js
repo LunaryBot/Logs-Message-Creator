@@ -1,9 +1,9 @@
 const fs = require("fs")
 
 module.exports = (client) => {
-  client.commands = new Map()
-  client.aliases = new Map()
-  let pastas = fs.readdirSync(__dirname + "/../commands")
+  client.commands = new Map();
+  client.aliases = new Map();
+  let pastas = fs.readdirSync(__dirname + "/../commands");
   for(let pasta of pastas) {
     let commands = fs.readdirSync(__dirname + "/../commands/" + pasta).filter(file => file.split(".").pop() == "js");
     for (command of commands) {
