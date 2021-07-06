@@ -1,8 +1,8 @@
 {
-  "name": "log-message-visualizer",
+  "name": "log-message",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/client.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/LunaryBot/Logs-Message-Creator/issues"
   },
-  "homepage": "https://github.com/LunaryBot/Logs-Message-Creator#readme"
+  "homepage": "https://github.com/LunaryBot/Logs-Message-Creator#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0"
+  }
 }
