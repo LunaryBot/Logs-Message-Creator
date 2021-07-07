@@ -5,7 +5,9 @@ Message.prototype.toHTML = async function() {
   if(this.content) {
     html += `<div class="content"><div class="markdown">${cleanContent(this.content, this, {
       emojis: true,
-      mention: true
+      codeblock: true,
+      mention: true,
+      large: true
     })}</div></div>`
   }
   html += "</div>"
@@ -48,7 +50,10 @@ function cleanContent(str, message, options = {}) {
     }
 
     if(options.codeblock !== false) str = str.replace(/\`\`\`(.*?)\`\`\`/ig,'<span class="code">$1</span>');
-    if(options.emojis !== false) str = str.replace(/<?(a)?:?(\w{2,32}):(\d{17,19})>?/g, '<img class="emoji-small" name="$2" animated="$1" src="https://cdn.discordapp.com/emojis/$3" />')
+    if(options.emojis !== false) {
+      if(message.emojis.size < 27 && options.emojilarge !== false) str = str.replace(/<?(a)?:?(\w{2,32}):(\d{17,19})>?/g, '<img class="emoji-large" name="$2" animated="$1" src="https://cdn.discordapp.com/emojis/$3" />')
+      else str = str.replace(/<?(a)?:?(\w{2,32}):(\d{17,19})>?/g, '<img class="emoji-small" name="$2" animated="$1" src="https://cdn.discordapp.com/emojis/$3" />')
+    }
 
     return str;
 }
