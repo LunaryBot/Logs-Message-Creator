@@ -7,16 +7,19 @@ Message.prototype.toHTML = async function() {
       emojis: true,
       codeblock: true,
       mention: true,
-      large: true
+      large: true,
+      underline: true
     })}</div></div>`
   }
   html += "</div>"
   return html
 }
 
+let emojiRegex = /<?(a)?:?(\w{2,32}):(\d{17,19})>?/g;
+
 function cleanContent(str, message, options = {}) {
-    str = str
-    .replace(/\n/g, "<br>")
+    str = "\n" + str 
+    str = str.replace(/\n/g, "<br>")
     // .replace(//g, "")
     // Menções
     if(options.mention !== false) {
@@ -36,7 +39,7 @@ function cleanContent(str, message, options = {}) {
           return channel ? `<span class="mention">#${channel.name}</span>` : input;
       })
       .replace(/<@&[0-9]+>/g, input => {
-          const role = message.guild.roles.cache.get(input.replace(/<|@|>|&/g, ''));
+          const role = message.guild.roles.cache.get(input.replace(/<|@|>|&/g, '')); 
           let hex = "7289da";
           let rgb = [125, 125, 255];
           if(role.color != 0) {
@@ -48,11 +51,17 @@ function cleanContent(str, message, options = {}) {
       .replace(/@everyone/g, '<span class="mention-role" style="color:#7289da;background:rgba(125, 125, 255, .1);">@everyone</span>')
       .replace(/@here/g, '<span class="mention-role" style="color:#7289da;background:rgba(125, 125, 255, .1);">@here</span>')
     }
-
-    if(options.codeblock !== false) str = str.replace(/\`\`\`(.*?)\`\`\`/ig,'<span class="code">$1</span>');
+    if(options.strong !== false) str = str.replace(/\*\*(.*?)\*\*/ig, '<strong>$1</strong>')
+    if(options.underline !== false) str = str.replace(/\_\_(.*?)\_\_/ig, '<u>$1</u>')
+    if(options.italic !== false) str = str.replace(/\*(.*?)\*/ig, '<em>$1</em>')
+    if(options.strike !== false) str = str.replace(/~~(.*?)~~/ig, '<del>$1</del>')
+    if(options.quote !== false) str = str.replace(/<br>> /ig, '<span class="quote"></span> ')
+    if(options.codeblock !== false) str = str.replace(/\`\`\`(.*?)\`\`\`/ig,'<span class="codeblock">$1</span>')
+    if(options.code !== false) str = str.replace(/\`(.*?)\`/ig, '<span class="code">$1</span>')
     if(options.emojis !== false) {
-      if(message.emojis.size < 27 && options.emojilarge !== false) str = str.replace(/<?(a)?:?(\w{2,32}):(\d{17,19})>?/g, '<img class="emoji-large" name="$2" animated="$1" src="https://cdn.discordapp.com/emojis/$3" />')
-      else str = str.replace(/<?(a)?:?(\w{2,32}):(\d{17,19})>?/g, '<img class="emoji-small" name="$2" animated="$1" src="https://cdn.discordapp.com/emojis/$3" />')
+      if(str.replace(/<?(a)?:?(\w{2,32}):(\d{17,19})>?|<br>| /g, "") !== "") str = str.replace(emojiRegex, '<img class="emoji-small" name="$2" animated="$1" src="https://cdn.discordapp.com/emojis/$3" />')
+      else if(message.emojis.size < 27 && options.emojilarge !== false) str = str.replace(emojiRegex, '<img class="emoji-large" name="$2" animated="$1" src="https://cdn.discordapp.com/emojis/$3" />')
+      else str = str.replace(emojiRegex, '<img class="emoji-small" name="$2" animated="$1" src="https://cdn.discordapp.com/emojis/$3" />')
     }
 
     return str;
@@ -75,5 +84,6 @@ function hexToRgb(string) {
       parseInt(aRgbHex[1], 16),
       parseInt(aRgbHex[2], 16)
     ];
+
     return rgb;
 }
